@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/math-strided-special-abs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Compute the absolute value for each element in a strided array.",
   "license": "Apache-2.0",
   "author": {
