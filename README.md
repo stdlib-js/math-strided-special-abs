@@ -59,7 +59,7 @@ npm install @stdlib/math-strided-special-abs
 var abs = require( '@stdlib/math-strided-special-abs' );
 ```
 
-#### abs( N, x, strideX, y, strideY )
+#### abs( N, dtypeX, x, strideX, dtypeY, y, strideY )
 
 Computes the [absolute value][absolute-value] for each element in `x` and assigns the results to elements in `y`.
 
@@ -69,15 +69,17 @@ var Float64Array = require( '@stdlib/array-float64' );
 var x = new Float64Array( [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ] );
 
 // Compute the absolute values in-place:
-abs( x.length, x, 1, x, 1 );
+abs( x.length, 'float64', x, 1, 'float64', x, 1 );
 // x => <Float64Array>[ 2.0, 1.0, 3.0, 5.0, 4.0, 0.0, 1.0, 3.0 ]
 ```
 
 The function accepts the following arguments:
 
 -   **N**: number of indexed elements.
+-   **dtypeX**: data type for `x`.
 -   **x**: input array-like object.
 -   **strideX**: index increment for `x`.
+-   **dtypeY**: data type for `y`.
 -   **y**: output array-like object.
 -   **strideY**: index increment for `y`.
 
@@ -85,14 +87,11 @@ The `N` and `stride` parameters determine which elements in `x` and `y` are acce
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
-var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = new Float64Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
 var y = new Float64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-var N = floor( x.length / 2 );
-
-abs( N, x, 2, y, -1 );
+abs( 3, 'float64', x, 2, 'float64', y, -1 );
 // y => <Float64Array>[ 5.0, 3.0, 1.0, 0.0, 0.0, 0.0 ]
 ```
 
@@ -100,7 +99,6 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
-var floor = require( '@stdlib/math-base-special-floor' );
 
 // Initial arrays...
 var x0 = new Float64Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
@@ -110,13 +108,11 @@ var y0 = new Float64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 var x1 = new Float64Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
 var y1 = new Float64Array( y0.buffer, y0.BYTES_PER_ELEMENT*3 ); // start at 4th element
 
-var N = floor( x0.length / 2 );
-
-abs( N, x1, -2, y1, 1 );
+abs( 3, 'float64', x1, -2, 'float64', y1, 1 );
 // y0 => <Float64Array>[ 0.0, 0.0, 0.0, 6.0, 4.0, 2.0 ]
 ```
 
-#### abs.ndarray( N, x, strideX, offsetX, y, strideY, offsetY )
+#### abs.ndarray( N, dtypeX, x, strideX, offsetX, dtypeY, y, strideY, offsetY )
 
 Computes the [absolute value][absolute-value] for each element in `x` and assigns the result to an element in `y` using alternative indexing semantics.
 
@@ -126,7 +122,7 @@ var Float64Array = require( '@stdlib/array-float64' );
 var x = new Float64Array( [ -1.0, -2.0, -3.0, -4.0, -5.0 ] );
 var y = new Float64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-abs.ndarray( x.length, x, 1, 0, y, 1, 0 );
+abs.ndarray( x.length, 'float64', x, 1, 0, 'float64', y, 1, 0 );
 // y => <Float64Array>[ 1.0, 2.0, 3.0, 4.0, 5.0 ]
 ```
 
@@ -139,14 +135,11 @@ While [`typed array`][mdn-typed-array] views mandate a view offset based on the 
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
-var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = new Float64Array( [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ] );
 var y = new Float64Array( [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ] );
 
-var N = floor( x.length / 2 );
-
-abs.ndarray( N, x, 2, 1, y, -1, y.length-1 );
+abs.ndarray( 3, 'float64', x, 2, 1, 'float64', y, -1, y.length-1 );
 // y => <Float64Array>[ 0.0, 0.0, 0.0, 6.0, 4.0, 2.0 ]
 ```
 
@@ -187,7 +180,7 @@ for ( i = 0; i < dt.length; i++ ) {
     y = filledarray( 0.0, x.length, dt[ i ] );
     console.log( y );
 
-    abs.ndarray( x.length, x, 1, 0, y, -1, y.length-1 );
+    abs.ndarray( x.length, dt[ i ], x, 1, 0, dt[ i ], y, -1, y.length-1 );
     console.log( y );
     console.log( '' );
 }
@@ -196,6 +189,24 @@ for ( i = 0; i < dt.length; i++ ) {
 </section>
 
 <!-- /.examples -->
+
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/math/strided/special/abs2`][@stdlib/math/strided/special/abs2]</span><span class="delimiter">: </span><span class="description">compute the squared absolute value for each element in a strided array.</span>
+-   <span class="package-name">[`@stdlib/math/strided/special/dabs`][@stdlib/math/strided/special/dabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a double-precision floating-point strided array.</span>
+-   <span class="package-name">[`@stdlib/math/strided/special/sabs`][@stdlib/math/strided/special/sabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a single-precision floating-point strided array.</span>
+
+</section>
+
+<!-- /.related -->
+
+<!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
 
 <section class="main-repo" >
@@ -255,6 +266,16 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 [absolute-value]: https://en.wikipedia.org/wiki/Absolute_value
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
+
+<!-- <related-links> -->
+
+[@stdlib/math/strided/special/abs2]: https://github.com/stdlib-js/math-strided-special-abs2
+
+[@stdlib/math/strided/special/dabs]: https://github.com/stdlib-js/math-strided-special-dabs
+
+[@stdlib/math/strided/special/sabs]: https://github.com/stdlib-js/math-strided-special-sabs
+
+<!-- </related-links> -->
 
 </section>
 
