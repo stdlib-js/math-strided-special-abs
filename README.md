@@ -22,11 +22,11 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] [![dependencies][dependencies-image]][dependencies-url]
 
-> Compute the [absolute value][absolute-value] for each element in a strided array.
+> Compute the [absolute value][@stdlib/math/base/special/abs] for each element in a strided array.
 
 <section class="intro">
 
-The [absolute value][absolute-value] is defined as
+The [absolute value][@stdlib/math/base/special/abs] is defined as
 
 <!-- <equation class="equation" label="eq:absolute_value" align="center" raw="|x| = \begin{cases} x & \textrm{if}\ x \geq 0 \\ -x & \textrm{if}\ x < 0\end{cases}" alt="Absolute value"> -->
 
@@ -61,7 +61,7 @@ var abs = require( '@stdlib/math-strided-special-abs' );
 
 #### abs( N, dtypeX, x, strideX, dtypeY, y, strideY )
 
-Computes the [absolute value][absolute-value] for each element in a strided array `x` and assigns the results to elements in a strided array `y`.
+Computes the [absolute value][@stdlib/math/base/special/abs] for each element in a strided array `x` and assigns the results to elements in a strided array `y`.
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
@@ -114,7 +114,7 @@ abs( 3, 'float64', x1, -2, 'float64', y1, 1 );
 
 #### abs.ndarray( N, dtypeX, x, strideX, offsetX, dtypeY, y, strideY, offsetY )
 
-Computes the [absolute value][absolute-value] for each element in a strided array `x` and assigns the result to an element in a strided array `y` using alternative indexing semantics.
+Computes the [absolute value][@stdlib/math/base/special/abs] for each element in a strided array `x` and assigns the result to an element in a strided array `y` using alternative indexing semantics.
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
@@ -263,11 +263,11 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-strided-special-abs/main/LICENSE
 
-[absolute-value]: https://en.wikipedia.org/wiki/Absolute_value
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/strided/dtypes]: https://github.com/stdlib-js/stdlib
+[@stdlib/strided/dtypes]: https://github.com/stdlib-js/strided-dtypes
 
 <!-- <related-links> -->
 
