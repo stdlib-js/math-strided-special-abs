@@ -30,10 +30,14 @@ The [absolute value][@stdlib/math/base/special/abs] is defined as
 
 <!-- <equation class="equation" label="eq:absolute_value" align="center" raw="|x| = \begin{cases} x & \textrm{if}\ x \geq 0 \\ -x & \textrm{if}\ x < 0\end{cases}" alt="Absolute value"> -->
 
-<div class="equation" align="center" data-raw-text="|x| = \begin{cases} x &amp; \textrm{if}\ x \geq 0 \\ -x &amp; \textrm{if}\ x &lt; 0\end{cases}" data-equation="eq:absolute_value">
+```math
+|x| = \begin{cases} x & \textrm{if}\ x \geq 0 \\ -x & \textrm{if}\ x < 0\end{cases}
+```
+
+<!-- <div class="equation" align="center" data-raw-text="|x| = \begin{cases} x &amp; \textrm{if}\ x \geq 0 \\ -x &amp; \textrm{if}\ x &lt; 0\end{cases}" data-equation="eq:absolute_value">
     <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@5080b1c6024f68941c0bd4829b354fc345de408a/lib/node_modules/@stdlib/math/strided/special/abs/docs/img/equation_absolute_value.svg" alt="Absolute value">
     <br>
-</div>
+</div> -->
 
 <!-- </equation> -->
 
@@ -41,38 +45,30 @@ The [absolute value][@stdlib/math/base/special/abs] is defined as
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-strided-special-abs
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-abs = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var abs = require( 'path/to/vendor/umd/math-strided-special-abs/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.abs;
-})();
-</script>
+var abs = require( '@stdlib/math-strided-special-abs' );
 ```
 
 #### abs( N, dtypeX, x, strideX, dtypeY, y, strideY )
@@ -175,13 +171,8 @@ abs.ndarray( 3, 'float64', x, 2, 1, 'float64', y, -1, y.length-1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {.factory;
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
 var filledarray = require( '@stdlib/array-filled' );
 var filledarrayBy = require( '@stdlib/array-filled-by' );
 var dtypes = require( '@stdlib/array-dtypes' );
@@ -204,11 +195,6 @@ for ( i = 0; i < dt.length; i++ ) {
     console.log( y );
     console.log( '' );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -223,9 +209,9 @@ for ( i = 0; i < dt.length; i++ ) {
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/math/strided/special/abs2`][@stdlib/math/strided/special/abs2]</span><span class="delimiter">: </span><span class="description">compute the squared absolute value for each element in a strided array.</span>
--   <span class="package-name">[`@stdlib/math/strided/special/dabs`][@stdlib/math/strided/special/dabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a double-precision floating-point strided array.</span>
--   <span class="package-name">[`@stdlib/math/strided/special/sabs`][@stdlib/math/strided/special/sabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a single-precision floating-point strided array.</span>
+-   <span class="package-name">[`@stdlib/math-strided/special/abs2`][@stdlib/math/strided/special/abs2]</span><span class="delimiter">: </span><span class="description">compute the squared absolute value for each element in a strided array.</span>
+-   <span class="package-name">[`@stdlib/math-strided/special/dabs`][@stdlib/math/strided/special/dabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a double-precision floating-point strided array.</span>
+-   <span class="package-name">[`@stdlib/math-strided/special/sabs`][@stdlib/math/strided/special/sabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a single-precision floating-point strided array.</span>
 
 </section>
 
@@ -284,7 +270,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 -->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://gitter.im/stdlib-js/stdlib/
+[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -300,19 +286,19 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/math-strided-special-abs/main/LICENSE
 
-[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs/tree/umd
+[@stdlib/math/base/special/abs]: https://github.com/stdlib-js/math-base-special-abs
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/strided/dtypes]: https://github.com/stdlib-js/strided-dtypes/tree/umd
+[@stdlib/strided/dtypes]: https://github.com/stdlib-js/strided-dtypes
 
 <!-- <related-links> -->
 
-[@stdlib/math/strided/special/abs2]: https://github.com/stdlib-js/math-strided-special-abs2/tree/umd
+[@stdlib/math/strided/special/abs2]: https://github.com/stdlib-js/math-strided-special-abs2
 
-[@stdlib/math/strided/special/dabs]: https://github.com/stdlib-js/math-strided-special-dabs/tree/umd
+[@stdlib/math/strided/special/dabs]: https://github.com/stdlib-js/math-strided-special-dabs
 
-[@stdlib/math/strided/special/sabs]: https://github.com/stdlib-js/math-strided-special-sabs/tree/umd
+[@stdlib/math/strided/special/sabs]: https://github.com/stdlib-js/math-strided-special-sabs
 
 <!-- </related-links> -->
 
