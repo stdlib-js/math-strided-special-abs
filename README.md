@@ -30,10 +30,14 @@ The [absolute value][@stdlib/math/base/special/abs] is defined as
 
 <!-- <equation class="equation" label="eq:absolute_value" align="center" raw="|x| = \begin{cases} x & \textrm{if}\ x \geq 0 \\ -x & \textrm{if}\ x < 0\end{cases}" alt="Absolute value"> -->
 
-<div class="equation" align="center" data-raw-text="|x| = \begin{cases} x &amp; \textrm{if}\ x \geq 0 \\ -x &amp; \textrm{if}\ x &lt; 0\end{cases}" data-equation="eq:absolute_value">
+```math
+|x| = \begin{cases} x & \textrm{if}\ x \geq 0 \\ -x & \textrm{if}\ x < 0\end{cases}
+```
+
+<!-- <div class="equation" align="center" data-raw-text="|x| = \begin{cases} x &amp; \textrm{if}\ x \geq 0 \\ -x &amp; \textrm{if}\ x &lt; 0\end{cases}" data-equation="eq:absolute_value">
     <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@5080b1c6024f68941c0bd4829b354fc345de408a/lib/node_modules/@stdlib/math/strided/special/abs/docs/img/equation_absolute_value.svg" alt="Absolute value">
     <br>
-</div>
+</div> -->
 
 <!-- </equation> -->
 
@@ -205,9 +209,9 @@ for ( i = 0; i < dt.length; i++ ) {
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/math/strided/special/abs2`][@stdlib/math/strided/special/abs2]</span><span class="delimiter">: </span><span class="description">compute the squared absolute value for each element in a strided array.</span>
--   <span class="package-name">[`@stdlib/math/strided/special/dabs`][@stdlib/math/strided/special/dabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a double-precision floating-point strided array.</span>
--   <span class="package-name">[`@stdlib/math/strided/special/sabs`][@stdlib/math/strided/special/sabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a single-precision floating-point strided array.</span>
+-   <span class="package-name">[`@stdlib/math-strided/special/abs2`][@stdlib/math/strided/special/abs2]</span><span class="delimiter">: </span><span class="description">compute the squared absolute value for each element in a strided array.</span>
+-   <span class="package-name">[`@stdlib/math-strided/special/dabs`][@stdlib/math/strided/special/dabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a double-precision floating-point strided array.</span>
+-   <span class="package-name">[`@stdlib/math-strided/special/sabs`][@stdlib/math/strided/special/sabs]</span><span class="delimiter">: </span><span class="description">compute the absolute value for each element in a single-precision floating-point strided array.</span>
 
 </section>
 
@@ -266,7 +270,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 -->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://gitter.im/stdlib-js/stdlib/
+[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
