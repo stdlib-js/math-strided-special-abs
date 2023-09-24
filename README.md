@@ -63,7 +63,7 @@ The [absolute value][@stdlib/math/base/special/abs] is defined as
 ## Usage
 
 ```javascript
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@deno/mod.js';
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@v0.1.0-deno/mod.js';
 ```
 
 #### abs( N, dtypeX, x, strideX, dtypeY, y, strideY )
@@ -171,7 +171,7 @@ var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-bas
 import filledarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled@deno/mod.js';
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@deno/mod.js';
 import dtypes from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-dtypes@deno/mod.js';
-import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@deno/mod.js';
+import abs from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@v0.1.0-deno/mod.js';
 
 var dt;
 var x;
