@@ -65,7 +65,7 @@ The [absolute value][@stdlib/math/base/special/abs] is defined as
 To use in Observable,
 
 ```javascript
-abs = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@umd/browser.js' )
+abs = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@v0.2.0-umd/browser.js' )
 ```
 
 To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
@@ -77,7 +77,7 @@ var abs = require( 'path/to/vendor/umd/math-strided-special-abs/index.js' )
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-abs@v0.2.0-umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
